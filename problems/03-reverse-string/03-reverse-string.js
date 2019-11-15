@@ -17,4 +17,4 @@ function reverseStr(someStr) {
         
     return outputToString;          
 }
-console.log(reverseStr("this is a test |") ); 
+console.log(reverseStr("this is a test |") );
