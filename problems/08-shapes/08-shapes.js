@@ -20,6 +20,75 @@ Example for printShape("Diamond", 5, "*");
  ***
   * 
 */
-function printShape(shape, height, character) {
-  
-}
+// Disclaimer: the switch component can be used as a flow control statement in Javascript
+
+let shapeType = {
+  shape:[
+        { square : '%'},
+        { triangle : '$'},
+        { diamond : '*'}
+  ],
+  height: [
+    //{height : `${height}`}
+    { height : 3}
+  ],
+  character: [
+    //{character : `${character}`}
+    { character : " \n %%% \n %%% \n %%% "},
+    { character :" $ \n $$ \n $$$ "},
+    { character :"  * \n *** \n***** \n *** \n  * "},
+  ]     
+};  
+
+let squareKey = Object.keys(shapeType.shape[0]);
+let squareH = Object.values(shapeType.height[0]);
+let squareC = Object.values(shapeType.character[0]);
+
+let triangleKey = Object.keys(shapeType.shape[1]);
+let triangleH = Object.values(shapeType.height[0]);
+let triangleC = Object.values(shapeType.character[1]);
+
+let diamondKey = Object.keys(shapeType.shape[2]);
+let diamondH = Object.values(shapeType.height[0]);
+let diamondC = Object.values(shapeType.character[2]);
+
+
+function printShape(shape) {
+  let switchShape = shape;
+    switchShape = ['square','triangle','diamond'];
+
+  if (shape == 'square'){
+    switchShape = switchShape[0];
+  }
+  if (shape == 'triangle'){
+    switchShape = switchShape[1];
+  }
+  if (shape == 'diamond'){
+    switchShape = switchShape[2];
+  }
+
+  switch (switchShape) {
+    case 'square' :
+        console.log(squareC.toString() );
+    break;
+
+    case 'triangle' :
+        console.log(triangleC.toString() );
+    break;
+
+    case 'diamond' :
+        console.log(diamondC.toString() );
+    break;
+
+  }  
+
+}  
+
+console.log(squareKey + "- square key");
+console.log(printShape("square") +" output" + "\n" );
+
+console.log(triangleKey + "- triangle key");
+console.log(printShape("triangle") + " output" + "\n" );
+
+console.log(diamondKey + "- diamond key");
+console.log(printShape("diamond") + " output" + "\n");
